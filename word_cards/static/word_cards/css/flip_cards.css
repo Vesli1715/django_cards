@@ -1,0 +1,73 @@
+.flex-block{
+	display: flex;
+	flex-wrap: wrap;
+	
+}
+
+.maincontainer {
+	width: 250px;
+	height: 320px;
+	padding: 20px;
+	
+}
+
+.thecard {
+	position: relative;
+	width: 100%;
+	height:100%;
+	transform-style: preserve-3d;
+	transition: all 0.5s ease;	
+}
+
+/*.thecard:hover{
+	transform: rotateY(180deg);
+}
+*/
+.thecard:active {
+	transform: rotateY(180deg);
+}
+
+.thefront {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	/*background: #ffc728;*/
+	background-image: url('../images/GB_flag.jpg');
+	background-position: center;
+	background-size: cover;	
+	color: black;
+	text-align: center;
+	font-family: sans-serif;
+	border-radius: 20px;
+	font-size: 20px;
+	font-weight: bold;    
+}
+
+.theback {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	background-image: url('../images/UA_flag.jpg');
+	background-position: center;
+	background-size: cover;	
+	color: black;
+	transform: rotateY(180deg);
+	text-align: center;
+	font-family: sans-serif;
+	border-radius: 20px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+h1 {
+	position: relative;
+	text-align: center;
+	top: 90px;
+	padding: 10px;
+	border-radius: 10px;
+	background: rgb(255,255,255, 0.6);
+}
+
+

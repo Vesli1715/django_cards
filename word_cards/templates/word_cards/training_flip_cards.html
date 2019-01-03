@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'word_cards/css/flip_cards.css' %}">
+{% for f in fields %}
+<div class="flex-block">
+	<div class='maincontainer'>
+		<div class='thecard'>
+			<div class="thefront">
+				<h1>{{ f.en_word }}</h1>
+			</div>
+			<div class="theback"> 
+				<h1>{{ f.ua_word }}</h1>
+			</div>	
+		</div>
+	</div>
+</div>
+
+{% endfor %}
+{% endblock %}

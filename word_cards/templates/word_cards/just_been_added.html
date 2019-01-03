@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'word_cards/css/just_been_added.css' %}">
+<div class='just_b_add'>
+	<div class='title_info'>
+		<h4>You added this card</h4>	
+	</div>
+	<div class="flex-block">
+		<div class='maincontainer'>
+			<div class='thecard'>
+				<div class="thefront">
+					<h3>{{ data.ua }}</h3>
+					<button class="button">hold me</button>
+				</div>
+				<div class="theback"> 
+					<h3>{{ data.en }} {{ data.pk}}</h3>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<div class="action_block">
+		<div class="remove_button">
+			<button type="submit" class="btn btn-danger"> Видалити </button>
+		</div>
+		<div class="confirm_button">
+			<button type="submit" class="btn btn-primary"> Все ОК </button>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

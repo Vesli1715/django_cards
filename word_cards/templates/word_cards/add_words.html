@@ -1,0 +1,14 @@
+	{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="add_words">
+	<h3>Додайте картку з новим словом</h3>
+	<form method="POST">
+ 	   {% csrf_token %}
+ 	   {{ form.as_p }}
+ 	   <button type="submit" class="save btn btn-success">Save</button>
+	</form>
+</div>
+
+{% endblock %} 

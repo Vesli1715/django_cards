@@ -1,0 +1,75 @@
+/*Table styles*/
+
+.content_list {
+	margin: 15px;
+	text-align: center;
+	background: green;
+	padding: 20px;
+	border-radius: 10px;
+	height: 510px;
+	width: 600px;
+}
+
+table tbody, table thead {
+    display: block;
+    width: 100%;
+}
+
+table tbody {
+	max-height: 360px;
+	overflow-y: auto;
+}
+
+th {  
+	background: darkgreen;
+}
+
+td {
+	height: 30px;
+	padding: 10px !important;
+}
+
+.col-en {
+	width:180px;
+}
+.col-ua {
+	width:180px;
+}
+.col-data {
+	width:182px;
+}
+.col-data-head {
+	width:197px;
+}
+
+/* switch for number of fields ALL/10/20/50*/
+.swith_block{
+	display: flex;
+	justify-content: space-between;
+}
+
+.some_title { 
+padding: 10px 	0px 0px 0px;
+}
+
+
+.nav-link{
+	background: darkgreen;
+	color: white;
+} 
+.nav-link:visited{
+	color: white ;
+}
+.nav-link:active {
+	color: black ;
+}
+
+/*Delete block container styles*/
+.delete_block{
+	height: 220px;
+	width: 350px;
+	background: green;
+	margin: 15px;
+	border-radius: 10px;
+	padding: 10px;
+}
