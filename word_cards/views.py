@@ -104,7 +104,7 @@ def choose_right_answer(request):
     }
     return render(request, 'word_cards/choice.html',data)
 
-
+#test coment
 
 
 
