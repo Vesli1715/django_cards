@@ -96,12 +96,7 @@ def choose_right_answer(request):
     for en, ua in all_words.items():
         en_words.append(en)
         ua_words.append(ua)
-    
-    # shuffle(en_words)
-    # for word in en_words:
-    #     shuffle(ua_words)
-    #     print(word)
-    #     print(ua_words)
+
     data = {
         'en_words':en_words,
         'ua_words':ua_words,
