@@ -1,0 +1,11 @@
+{% extends 'registration/reg_base.html' %}
+
+{% block content %}
+<h2> Singup </h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sing Up</button>
+
+</form>
+{% endblock%}

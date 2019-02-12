@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>reg</title>
+</head>
+<body>
+<h1>registration hello</h1>
+<a href="{% url 'index' %}">Content</a>/
+<a href="{% url 'singup' %}">Sing up</a>
+<hr>
+{% block content %}
+
+{% endblock %}
+
+<strong> Total user registered: {{ count }} </strong>
+<br>
+</body>
+</html>
