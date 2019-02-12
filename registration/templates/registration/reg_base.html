@@ -7,13 +7,22 @@
 <body>
 <h1>registration hello</h1>
 <a href="{% url 'index' %}">Content</a>/
+{% if user.is_authenticated %}
+    <a href="{% url 'logout' %}">Log Out</a>
+{% else %}
 <a href="{% url 'singup' %}">Sing Up</a>/
-<a href="{% url 'login' %}">Log In</a>
+<a href="{% url 'login' %}">Log In</a>/
+
 <hr>
+{% endif%}
 {% block content %}
 
 {% endblock %}
-<h3>welcome {{ user.username }}</h3>
+<h3> Welcome {% if user.is_authenticated %}
+    {{ user.username }}
+    {% else %}
+    Man
+{% endif %}</h3>
 <strong> Total user registered: {{ count }} </strong>
 <br>
 </body>

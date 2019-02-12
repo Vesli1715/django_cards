@@ -12,22 +12,28 @@
 	<div class="flex-block">
 		<div class='maincontainer'>
 			<div class='thecard'>
+				{% for w in word %}
 				<div class="thefront">
-					<h3>{{ data.ua }}</h3>
+					<h3>{{ w.en_word }}</h3>
 					<button class="button">hold me</button>
 				</div>
 				<div class="theback"> 
-					<h3>{{ data.en }} {{ data.pk}}</h3>
-				</div>	
+					<h3>{{ w.ua_word }}</h3>
+				</div>
+				{% endfor %}
 			</div>
 		</div>
 	</div>
 	<div class="action_block">
 		<div class="remove_button">
-			<button type="submit" class="btn btn-danger"> Видалити </button>
+			<a href=#>
+				<button type="submit" class="btn btn-danger"> Видалити </button>
+			</a>
 		</div>
 		<div class="confirm_button">
-			<button type="submit" class="btn btn-primary"> Все ОК </button>
+			<a href="{% url 'word_cards:add_words' %}">
+				<button type="submit" class="btn btn-primary"> Все ОК </button>
+			</a>
 		</div>
 	</div>
 </div>
