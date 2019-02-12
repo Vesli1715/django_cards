@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+answer : {{  en_words_1 }}
+<form>
+    {% for w in ua_words%}
+    <input type="submit" name={{ w }} value={{ w }} />
+    {% endfor%}
+</form>
+
+</body>
+</html>
