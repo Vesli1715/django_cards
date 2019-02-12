@@ -7,12 +7,13 @@
 <body>
 <h1>registration hello</h1>
 <a href="{% url 'index' %}">Content</a>/
-<a href="{% url 'singup' %}">Sing up</a>
+<a href="{% url 'singup' %}">Sing Up</a>/
+<a href="{% url 'login' %}">Log In</a>
 <hr>
 {% block content %}
 
 {% endblock %}
-
+<h3>welcome {{ user.username }}</h3>
 <strong> Total user registered: {{ count }} </strong>
 <br>
 </body>

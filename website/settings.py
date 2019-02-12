@@ -127,3 +127,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [                    # help run static
     os.path.join(BASE_DIR, "static"),   #
 ]
+LOGIN_REDIRECT_URL = "index"
