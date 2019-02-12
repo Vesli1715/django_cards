@@ -5,24 +5,26 @@
     <title>reg</title>
 </head>
 <body>
-<h1>registration hello</h1>
+<h1>registration page</h1>
 <a href="{% url 'index' %}">Content</a>/
 {% if user.is_authenticated %}
-    <a href="{% url 'logout' %}">Log Out</a>
+    <a href="{% url 'logout' %}">Log Out</a>/
+    <a href="{% url 'password_change' %}"> Change password </a>/
 {% else %}
-<a href="{% url 'singup' %}">Sing Up</a>/
-<a href="{% url 'login' %}">Log In</a>/
-
+    <a href="{% url 'singup' %}">Sing Up</a>/
+    <a href="{% url 'login' %}">Log In</a>/
 <hr>
-{% endif%}
+{% endif %}
 {% block content %}
-
 {% endblock %}
-<h3> Welcome {% if user.is_authenticated %}
-    {{ user.username }}
+
+<h3> Welcome:
+    {% if user.is_authenticated %}
+        {{ user.username }}
     {% else %}
-    Man
-{% endif %}</h3>
+        Visitor
+    {% endif %}
+</h3>
 <strong> Total user registered: {{ count }} </strong>
 <br>
 </body>
