@@ -1,5 +1,11 @@
 {% extends 'registration/reg_base.html' %}
 
 {% block content %}
-<h2> Content </h2>
+    <h2> Block Content </h2>
+   <h3> Welcome:
+            {% if user.is_authenticated %} {{ user.username }}
+            {% else %} Visitor
+            {% endif %} </h3>
+        <strong> Total user registered: {{ count }} </strong>
+        <br>
 {% endblock%}
