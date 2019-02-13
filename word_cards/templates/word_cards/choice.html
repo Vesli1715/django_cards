@@ -7,11 +7,9 @@
 {% block content %}
 <div class="choice_block">
 	<div class="question">
-	{{ for w in }}
+	{% for w in data %}
 		<h1>{{ en_words }}</h1>
-	}
-	}
-	
+		{% endfor %}
 	</div></br>
 	<div class='ansver_block'>		
 		{% for word in ua_words %}
@@ -21,11 +19,15 @@
 					<label class="choice" for="discovery">{{word}}</label>
 	        	</li>
 	        </ul></br>
-		{% endfor%}
+		{% endfor %}
 		<button type="submit" class="save btn btn-success">confirm</button>
 	</div>
 </div>
 {% endblock %}
+asd
+asd
+asda
+sd
 
 <label class="heading">What's your favorite part of the process?</label></br>
 
