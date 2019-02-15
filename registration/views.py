@@ -1,9 +1,18 @@
-from django.shortcuts import render ,redirect
-from django.contrib.auth.forms import UserCreationForm
+from django.http import HttpResponse
+from django.shortcuts import render
+from django.contrib.auth import login
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required   # forbids access to unregistered user(used decorators)
-from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin   # forbids access to unregistered user in class based view
+from django.contrib.sites.shortcuts import get_current_site
+from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
+from django.utils.encoding import force_bytes, force_text
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.views.generic import TemplateView
+
+from .forms import SignupForm
+from .tokens import account_activation_token
 
 
 def index(request):
@@ -12,40 +21,6 @@ def index(request):
 
 
 def signup(request):
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('content.html')
-    else:
-        form = UserCreationForm()
-    return render(request, 'registration/signup.html', {'form':form})
-
-
-@login_required
-def secret_page(request):
-    return render(request, 'registration/secret_page.html')
-
-
-class SecretPage(LoginRequiredMixin, TemplateView):
-    template_name = 'registration/secret_page.html'
-
-
-
-
-from django.http import HttpResponse
-from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
-from .forms import SignupForm
-from django.contrib.sites.shortcuts import get_current_site
-from django.utils.encoding import force_bytes, force_text
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
-from django.template.loader import render_to_string
-from .tokens import account_activation_token
-from django.contrib.auth.models import User
-from django.core.mail import EmailMessage
-
-def test_signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)
         if form.is_valid():
@@ -85,3 +60,16 @@ def activate(request, uidb64, token):
         return HttpResponse('Thank you for your email confirmation. Now you can login your account.')
     else:
         return HttpResponse('Activation link is invalid!')
+
+
+@login_required
+def secret_page(request):
+    return render(request, 'registration/secret_page.html')
+
+
+class SecretPage(LoginRequiredMixin, TemplateView):
+    template_name = 'registration/secret_page.html'
+
+
+
+
