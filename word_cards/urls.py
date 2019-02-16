@@ -19,6 +19,7 @@ urlpatterns = [
     path('words_list/all/', views.show_all_words_list, name='all_words_list'),
 
     path('polls/', views.index ),
+    path('test/', views.test, name='test')
 ]
 
 
