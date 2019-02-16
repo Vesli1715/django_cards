@@ -191,3 +191,17 @@ def index(request):
     }
 
     return render(request, 'word_cards/test_polls.html', data)
+
+
+def test(request):
+    if request.method == 'POST':
+        en = request.POST['en_word'].lower()
+        ua = request.POST['ua_word'].lower()
+        if en.isalpha() and ua.isalpha():
+            field = WordsForm(request.POST)
+            field.save()
+            data = {'en': en, 'ua': ua}
+            return HttpResponse('word added')#redirect('word_cards/just_been_added', {'data': data})  # always must be redirect
+    else:
+        form = WordsForm()
+    return render(request, 'base_app/test.html', {'form': form})
