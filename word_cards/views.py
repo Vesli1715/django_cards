@@ -1,5 +1,6 @@
 from django.http import HttpResponseRedirect , HttpResponse, HttpRequest
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 
 from .forms import WordsForm, DeleteForm, SimpleForm
 
@@ -192,8 +193,8 @@ def index(request):
 
     return render(request, 'word_cards/test_polls.html', data)
 
-
-def test(request):
+@login_required
+def add_new_words(request):
     if request.method == 'POST':
         en = request.POST['en_word'].lower()
         ua = request.POST['ua_word'].lower()
@@ -204,4 +205,4 @@ def test(request):
             return HttpResponse('word added')#redirect('word_cards/just_been_added', {'data': data})  # always must be redirect
     else:
         form = WordsForm()
-    return render(request, 'base_app/test.html', {'form': form})
+    return render(request, 'base_app/add_new_words.html', {'form': form})
