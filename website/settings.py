@@ -127,4 +127,10 @@ STATICFILES_DIRS = [  # help run static
 LOGIN_REDIRECT_URL = "index"
 LOGOUT_REDIRECT_URL = "index"
 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # for confirm password change
+#EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # for confirm password change
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'bethebest1715@gmail.com'
+EMAIL_HOST_PASSWORD = 'vasyl1715'
+EMAIL_PORT = 587

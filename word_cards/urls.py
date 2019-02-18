@@ -19,6 +19,12 @@ urlpatterns = [
     path('words_list/all/', views.show_all_words_list, name='all_words_list'),
 
     path('polls/', views.index ),
+
+
+    path('add_new_words/', views.add_new_words, name='add_new_words'),
+    path('add_new_words/base_app/word_added_successfully/', views.word_added_successfully ),
+    path('training/', views.training, name='training'),
+
 ]
 
 

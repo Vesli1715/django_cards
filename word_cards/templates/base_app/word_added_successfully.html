@@ -1,0 +1,23 @@
+{% extends 'registration/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <h1>word added successfully</h1>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <div class="card">
+                <div class="card-body">
+                    <a href="{% url 'word_cards:add_new_words' %}">
+					    <button type="submit" class="btn btn-success"> add new one </button>
+				    </a>
+                    <a href="{% url 'word_cards:training' %}">
+					    <button type="submit" class="btn btn-success"> go training </button>
+				    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}

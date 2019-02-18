@@ -1,0 +1,21 @@
+{% extends 'registration/base.html' %}
+
+{% block content %}
+<form action="" method="get">
+
+<div class="choice_block">
+	<div class='answer_block'>
+        {{ en_words_1 }}
+		{% for word in ua_words %}
+	      	<ul class="nav nav-tabs">
+	       		<li class="nav-item" >
+	          		<input type="radio" name="process" value="{{ word }}" id="{{ word }}"/>
+					<label class="choice"> {{ word }} </label>
+	        	</li>
+	        </ul></br>
+		{% endfor %}
+		 <button type="submit" class="btn btn-success">Answer</button>
+	</div>
+</div>
+</form>
+{% endblock%}
