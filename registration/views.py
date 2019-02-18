@@ -17,7 +17,7 @@ from .tokens import account_activation_token
 
 def index(request):
     count = User.objects.count()
-    return render(request, 'registration/content.html', {'count': count })
+    return render(request, 'registration/index.html', {'count': count })
 
 
 def signup(request):
