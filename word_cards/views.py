@@ -187,8 +187,8 @@ def word_added_successfully(request):
 
 
 def training(request):
-    query = list(Words.objects.all().order_by('-id')[:5])
 
+    query = list(Words.objects.all().order_by('-id')[:5])
     L = []
     for items in query:
         s = str(items)
@@ -196,9 +196,9 @@ def training(request):
         L.append(words)
 
     all_words = {key: value for (key, value) in L}
-
     en_words = []
     ua_words = []
+
     for en, ua in all_words.items():
         en_words.append(en)
         ua_words.append(ua)
@@ -210,17 +210,21 @@ def training(request):
     en_5 = en_words[4]
 
     z = ''
-    if request.method == 'GET':
-        d = dict(request.GET)
+    if request.method == 'POST':
+        d = dict(request.POST)
         for k, v in d.items():
             print(v[0])
             z = v[0]
 
-    if all_words[en_1] == z:
-        print('success')
-    else:
-        print("False")
+    result = ''
+    if request.method == 'POST':
+        if all_words[en_1] == z:
+            result = "Right !!!"
+        else:
+            result = "Wrong"
+
     data = {
+        'result': result,
         'en_words': en_words,
         'ua_words': ua_words,
         'en_words_1': en_1,
@@ -228,7 +232,5 @@ def training(request):
         'en_words_3': en_3,
         'en_words_4': en_4,
         'en_words_5': en_5,
-        'all_words': all_words
     }
-    print()
     return render(request, 'base_app/training.html', data)
