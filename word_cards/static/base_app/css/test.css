@@ -1,0 +1,31 @@
+.asteriskField {
+    display: none;
+}
+
+form .alert ul li {
+    list-style: none;
+    }
+
+form .alert ul {
+    margin: 0;
+    padding: 0;
+}
+
+#hint_id_password1 {
+     display: none;
+}
+
+
+
+.table-wrapper-scroll-y {
+    display: block;
+    max-height: 400px;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.delte-block {
+    height:100px;
+    width: 100px;
+    background:red;
+}

@@ -140,7 +140,8 @@ def word_added_successfully(request):
 
 
 def table_of_words(request):
-    return render(request, 'base_app/table_of_words.html')
+    fields = Words.objects.all().order_by('-id')
+    return render(request, 'base_app/table_of_words.html', {'fields': fields})
 
 
 
