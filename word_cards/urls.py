@@ -8,11 +8,7 @@ urlpatterns = [
     path('add_words/', views.add_words, name='add_words'),
     path('delete/', views.de, name='delete_word'),
     path('add_words/word_cards/just_been_added', views.just_been_added),
-
     path('training_flip_cards', views.training_flip_cards, name='flip_cards'),
-    path('choice/', views.choose_right_answer, name='choice'),
-    path('words_list/last_ten/', views.delete_word),
-
     path('polls/', views.training ),
 
 
