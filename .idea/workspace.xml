@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fabbfb37-71cf-4457-b6d2-299a119c9d0e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/word_cards/templates/base_app/table_of_words.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/word_cards/templates/base_app/training.html" beforeDir="false" afterPath="$PROJECT_DIR$/word_cards/templates/base_app/training.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration/templates/registration/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/registration/templates/registration/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration/templates/registration/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/registration/templates/registration/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registration/templates/registration/password_reset_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/registration/templates/registration/password_reset_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/word_cards/templates/base_app/main_traning_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/word_cards/templates/base_app/main_training_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/word_cards/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/word_cards/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/word_cards/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/word_cards/views.py" afterDir="false" />
     </list>
@@ -16,28 +20,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/word_cards/templates/base_app/main_traning_page.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/word_cards/templates/base_app/training.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" selection-end-line="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/word_cards/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+            <state relative-caret-position="225">
+              <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -48,11 +34,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/word_cards/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="155" column="4" lean-forward="true" selection-start-line="155" selection-start-column="4" selection-end-line="155" selection-end-column="12" />
+            <state relative-caret-position="194">
+              <caret line="141" column="12" selection-start-line="141" selection-start-column="12" selection-end-line="141" selection-end-column="12" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/registration/templates/registration/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="42" column="86" selection-start-line="42" selection-start-column="86" selection-end-line="42" selection-end-column="86" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/word_cards/templates/base_app/table_of_words.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -108,7 +112,6 @@
         <option value="$PROJECT_DIR$/registration/templates/registration/password_reset_complete.html" />
         <option value="$PROJECT_DIR$/registration/templates/registration/password_reset_confirm.html" />
         <option value="$PROJECT_DIR$/registration/templates/registration/password_reset_done.html" />
-        <option value="$PROJECT_DIR$/registration/templates/registration/password_reset_form.html" />
         <option value="$PROJECT_DIR$/registration/templates/registration/secret_page.html" />
         <option value="$PROJECT_DIR$/registration/templates/registration/signup.html" />
         <option value="$PROJECT_DIR$/word_cards/templates/word_cards/test.html" />
@@ -117,14 +120,17 @@
         <option value="$PROJECT_DIR$/word_cards/templates/base_app/test.html" />
         <option value="$PROJECT_DIR$/registration/templates/registration/welcome_page.html" />
         <option value="$PROJECT_DIR$/registration/views.py" />
-        <option value="$PROJECT_DIR$/registration/templates/registration/base.html" />
         <option value="$PROJECT_DIR$/registration/urls.py" />
         <option value="$PROJECT_DIR$/word_cards/templates/base_app/add_new_words.html" />
         <option value="$PROJECT_DIR$/word_cards/templates/base_app/word_added_successfully.html" />
         <option value="$PROJECT_DIR$/word_cards/templates/base_app/training.html" />
         <option value="$PROJECT_DIR$/word_cards/templates/base_app/main_traning_page.html" />
-        <option value="$PROJECT_DIR$/word_cards/views.py" />
+        <option value="$PROJECT_DIR$/registration/templates/registration/index.html" />
+        <option value="$PROJECT_DIR$/registration/templates/registration/password_reset_form.html" />
         <option value="$PROJECT_DIR$/word_cards/urls.py" />
+        <option value="$PROJECT_DIR$/word_cards/views.py" />
+        <option value="$PROJECT_DIR$/registration/templates/registration/base.html" />
+        <option value="$PROJECT_DIR$/word_cards/templates/base_app/table_of_words.html" />
       </list>
     </option>
   </component>
@@ -147,6 +153,24 @@
             <path>
               <item name="website" type="b2602c69:ProjectViewProjectNode" />
               <item name="website" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="registration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="registration" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="website" type="462c0819:PsiDirectoryNode" />
+              <item name="registration" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="registration" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="website" type="b2602c69:ProjectViewProjectNode" />
@@ -238,7 +262,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.21742368" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.23157111" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.28175896" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -358,13 +382,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/word_cards/templates/word_cards/all_words_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="59" column="55" lean-forward="true" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/word_cards/static/word_cards/css/just_been_added.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -470,13 +487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/registration/templates/registration/password_reset_form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/word_cards/templates/base_app.py" />
     <entry file="file://$PROJECT_DIR$/website/urls.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -513,20 +523,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="25" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/registration/templates/registration/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/registration/templates/registration/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="36" column="59" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -585,6 +581,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/registration/templates/registration/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="38" selection-start-column="38" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/registration/templates/registration/password_reset_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/word_cards/templates/base_app/main_training_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/word_cards/templates/word_cards/choice.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -592,44 +609,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/word_cards/templates/word_cards/all_words_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="59" column="55" lean-forward="true" selection-start-line="59" selection-start-column="55" selection-end-line="59" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/word_cards/templates/base_app/add_new_words.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="87" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="87" />
+        <state>
+          <caret selection-end-line="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/word_cards/templates/base_app/training.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret lean-forward="true" selection-end-line="28" />
+          <caret selection-end-line="27" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/word_cards/templates/base_app/main_traning_page.html">
+    <entry file="file://$PROJECT_DIR$/word_cards/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="225">
+          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/word_cards/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="155" column="4" lean-forward="true" selection-start-line="155" selection-start-column="4" selection-end-line="155" selection-end-column="12" />
+        <state relative-caret-position="194">
+          <caret line="141" column="12" selection-start-line="141" selection-start-column="12" selection-end-line="141" selection-end-column="12" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/word_cards/urls.py">
+    <entry file="file://$PROJECT_DIR$/registration/templates/registration/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="210">
+          <caret line="42" column="86" selection-start-line="42" selection-start-column="86" selection-end-line="42" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/word_cards/templates/base_app/table_of_words.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
         </state>
       </provider>
     </entry>

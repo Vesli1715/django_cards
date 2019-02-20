@@ -1,11 +1,14 @@
 {% extends 'registration/base.html' %}
-
 {% block content %}
-    <h2> Welcome page </h2>
-   <h3> Welcome:
+    <h1> Welcome page </h1>
+    <h2> Welcome:
             {% if user.is_authenticated %} {{ user.username }}
             {% else %} Visitor
-            {% endif %} </h3>
-        <strong> Total user registered: {{ count }} </strong>
-        <br>
+            {% endif %}
+    </h2>
+    <strong> Total user registered: {{ count }} </strong>
+    <h3>The site is designed to help people who are learning English,
+        specifically working to replenish their vocabulary.</h3>
+    <h3>For better word memorization, multiple repetitions using different techniques are used.
+        Method of cards and various tests from English to Ukrainian and from Ukrainian to English</h3>
 {% endblock%}

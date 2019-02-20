@@ -139,8 +139,21 @@ def word_added_successfully(request):
 
 
 
+def table_of_words(request):
+    return render(request, 'base_app/table_of_words.html')
+
+
+
+
+""" ---------- TRAINING BLOCK ------------- """
+
+def main_training_page(request):
+    return render(request, 'base_app/main_training_page.html')
+
+
 def list_last5_from_table():
-    """returns list of last 5 records in db in format [['en_w','ua_word'],[...]]"""
+    """returns list of last 5 records in db in format [['en_w','ua_word'],[...]]
+    this function for using in training func"""
     query = list(Words.objects.all().order_by('-id')[:5])
     L = []
     for items in query:
@@ -148,8 +161,6 @@ def list_last5_from_table():
         words = s.split(' ')
         L.append(words)
     return L
-
-
 
 w_index = 0
 @login_required
@@ -180,7 +191,7 @@ def training(request):
             result = "Wrong"
 
     if w_index >= 4:
-        return HttpResponse('all done!')
+        return render(request, 'base_app/main_training_page.html')
     elif next:
         w_index += 1
         question_word = list_of_en_words[w_index]
@@ -190,5 +201,4 @@ def training(request):
         'list_of_ua_words': list_of_ua_words,
         "question_word" : question_word,
     }
-
     return render(request, 'base_app/training.html', data)
