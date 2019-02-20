@@ -18,13 +18,14 @@ urlpatterns = [
     path('words_list/last_fifty/', views.show_last_fifty, name='last_fifty'),
     path('words_list/all/', views.show_all_words_list, name='all_words_list'),
 
-    path('polls/', views.index ),
+    path('polls/', views.training ),
 
 
     path('add_new_words/', views.add_new_words, name='add_new_words'),
     path('add_new_words/base_app/word_added_successfully/', views.word_added_successfully ),
     path('training/', views.training, name='training'),
-
+    path('main_training_page/', views.main_training_page, name='main_training_page'),
+    path('table_of_words/', views.table_of_words, name='table_of_words')
 ]
 
 

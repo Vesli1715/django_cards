@@ -1,0 +1,34 @@
+{% extends 'registration/base.html' %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'word_cards/css/test.css' %}">
+
+{% block content %}
+<div class="contanier">
+  <div class="table-wrapper-scroll-y">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr class="table-success">
+          <th scope="col">#</th>
+          <th scope="col">Слово</th>
+          <th scope="col">Переклад</th>
+          <th scope="col">Додано</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in fields %}
+        <tr>
+          <th scope="row">1</th>
+          <td>{{ item.en_word }}</td>
+          <td>{{ item.ua_word }}</td>
+          <td>{{ item.added_data }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <div class="delte-block">
+    asg
+  </div>
+</div>
+{% endblock%}

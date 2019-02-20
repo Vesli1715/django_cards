@@ -4,10 +4,10 @@
 <div class="choice_block">
 	<div class='answer_block'>
 
-		<h1> Translate this word: {{ en_words_1 }}</h1>
+		<h1> Translate this word: {{ question_word }}</h1>
 		<form action="" method="post">
 			{% csrf_token %}
-			{% for word in ua_words %}
+			{% for word in list_of_ua_words %}
 			<ul class="nav nav-tabs">
 	       		<li class="nav-item" >
 	          		<input type="radio" name="process" value="{{ word }}" id="{{ word }}"/>
@@ -18,8 +18,7 @@
 			{% endfor %}
 			<button type="submit" class="btn btn-success"> Answer </button>
 		</form>
-
-		{% if result  %}
+		{% if result %}
 		<h2> {{ result }}</h2>
 		{% else %}
 		<h2>{{ result }}</h2>
