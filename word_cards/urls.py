@@ -13,11 +13,6 @@ urlpatterns = [
     path('choice/', views.choose_right_answer, name='choice'),
     path('words_list/last_ten/', views.delete_word),
 
-    path('words_list/last_ten/', views.show_last_ten, name='last_ten'),
-    path('words_list/last_twenty/', views.show_last_twenty, name='last_twenty'),
-    path('words_list/last_fifty/', views.show_last_fifty, name='last_fifty'),
-    path('words_list/all/', views.show_all_words_list, name='all_words_list'),
-
     path('polls/', views.training ),
 
 

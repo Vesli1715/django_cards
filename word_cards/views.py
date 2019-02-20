@@ -56,29 +56,6 @@ def delete_word(request):
     D = {'form': form, 'fields': fields}
     return render(request, 'word_cards/all_words_list.html', D)
 
-
-# bad decision 
-def show_all_words_list(request):
-    fields = Words.objects.all().order_by('-id')
-    return render(request, 'word_cards/all_words_list.html', {'fields': fields})
-
-
-def show_last_ten(request, numb=10):
-    fields = Words.objects.all().order_by('-id')[:numb]
-    return render(request, 'word_cards/all_words_list.html', {'fields': fields})
-
-
-def show_last_twenty(request, numb=20):
-    fields = Words.objects.all().order_by('-id')[:numb]
-    return render(request, 'word_cards/all_words_list.html', {'fields': fields})
-
-
-def show_last_fifty(request, numb=50):
-    fields = Words.objects.all().order_by('-id')[:numb]
-    return render(request, 'word_cards/all_words_list.html', {'fields': fields})
-# to here
-
-
 def show_record_data(request):
     en = request.POST['english_word']
     ua = request.POST['ukrainian_word']
@@ -141,7 +118,28 @@ def word_added_successfully(request):
 
 def table_of_words(request):
     fields = Words.objects.all().order_by('-id')
-    return render(request, 'base_app/table_of_words.html', {'fields': fields})
+
+    if request.method == 'POST':
+        form = DeleteForm(request.POST)
+        if form.is_valid():
+            word = request.POST.get('delete_word', 'error')
+            if word:
+                print(word)
+                Words.objects.filter(en_word=word).delete()
+            # process the data in form.cleaned_data as required
+            # ...
+            # redirect to a new URL:
+            D = {'form': form, 'fields': fields}
+            return render(request, 'base_app/table_of_words.html',D)
+
+        # if a GET (or any other method) we'll create a blank form
+    else:
+        form = DeleteForm()
+    fields = Words.objects.all().order_by('-id')[:10]
+    D = {'form': form, 'fields': fields}
+
+    return render(request, 'base_app/table_of_words.html', D)
+
 
 
 

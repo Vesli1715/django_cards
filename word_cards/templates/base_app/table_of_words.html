@@ -1,34 +1,52 @@
 {% extends 'registration/base.html' %}
-
+{% load crispy_forms_tags %}
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'word_cards/css/test.css' %}">
 
 {% block content %}
-<div class="contanier">
-  <div class="table-wrapper-scroll-y">
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr class="table-success">
-          <th scope="col">#</th>
-          <th scope="col">Слово</th>
-          <th scope="col">Переклад</th>
-          <th scope="col">Додано</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for item in fields %}
-        <tr>
-          <th scope="row">1</th>
-          <td>{{ item.en_word }}</td>
-          <td>{{ item.ua_word }}</td>
-          <td>{{ item.added_data }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
-  <div class="delte-block">
-    asg
-  </div>
+<div class="row">
+
+    <div class="col-8">
+    <div class="table-wrapper-scroll-y">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr class="table-success">
+            <th scope="col">#</th>
+            <th scope="col">Слово</th>
+            <th scope="col">Переклад</th>
+            <th scope="col">Додано</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in fields %}
+          <tr>
+            <th scope="row">1</th>
+            <td>{{ item.en_word }}</td>
+            <td>{{ item.ua_word }}</td>
+            <td>{{ item.added_data }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      </div>
+    </div>
+      <div class="col-4">
+          <div class="card">
+              <div class="card-body">
+                  <div class="text-center">
+                    <h3 >Delete word</h3>
+                  </div>
+                  <div class="text-center">
+                   <form method="post">
+                      {% csrf_token %}
+                      {{ form|crispy }}
+                      <button type="submit" class="btn btn-success"> Delete </button>
+                  </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+
 </div>
+
 {% endblock%}
