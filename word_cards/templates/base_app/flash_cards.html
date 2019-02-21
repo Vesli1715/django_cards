@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'registration/base.html' %}
+{% block content %}
 
-</body>
-</html>
+<div class="content">
+{% for f in fields %}
+	<div class="flex-block">
+		<div class='maincontainer'>
+			<div class='thecard'>
+				<div class="thefront">
+					<h1>{{ f.en_word }}</h1>
+				</div>
+				<div class="theback">
+					<h1>{{ f.ua_word }}</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endfor %}
+</div>
+{% endblock%}
+

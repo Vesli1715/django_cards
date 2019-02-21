@@ -1,9 +1,8 @@
 {% extends 'registration/base.html' %}
-
 {% block content %}
+
 <div class="choice_block">
 	<div class='answer_block'>
-
 		<h1> Translate this word: {{ question_word }}</h1>
 		<form action="" method="post">
 			{% csrf_token %}
@@ -25,4 +24,5 @@
 		{% endif %}
 	</div>
 </div>
+
 {% endblock%}

@@ -13,14 +13,8 @@ class WordsForm(forms.ModelForm):
 
 
 class DeleteForm(forms.Form):
-    delete_word = forms.CharField(label='Enter english word you want to delete', max_length=16)
+    delete_word = forms.CharField(label='Enter any word you want to delete', max_length=16)
 
-
-CHOICES=[('select1','select 1'),
-         ('select2','select 2')]
-
-class SimpleForm(forms.Form):
-    my_choise = forms.ChoiceField(required=False, choices=CHOICES, widget=forms.RadioSelect)
 
 
 
