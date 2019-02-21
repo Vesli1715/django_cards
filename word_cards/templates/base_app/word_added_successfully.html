@@ -3,19 +3,20 @@
 {% block content %}
 <div class="container">
     <div class="row justify-content-center">
-        <h1>word added successfully</h1>
+        <h1>Words added successfully</h1>
     </div>
     <div class="row justify-content-center">
         <div class="col-10">
-            <div class="card">
-                <div class="card-body">
-                    <a href="{% url 'word_cards:add_new_words' %}">
-					    <button type="submit" class="btn btn-success"> add new one </button>
-				    </a>
-                    <a href="{% url 'word_cards:training' %}">
-					    <button type="submit" class="btn btn-success"> go training </button>
-				    </a>
-                </div>
+            <div class="card-body text-center">
+                <a href="{% url 'word_cards:add_new_words' %}">
+                    <button type="submit" class="btn btn-success mr-3"> Add new word </button>
+                </a>
+                <a href="{% url 'word_cards:main_training_page' %}">
+                    <button type="submit" class="btn btn-success mr-3"> Go training </button>
+                </a>
+                <a href="{% url 'word_cards:table_of_words' %}">
+                    <button type="submit" class="btn btn-success"> Table of words </button>
+                </a>
             </div>
         </div>
     </div>

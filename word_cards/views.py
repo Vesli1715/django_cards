@@ -56,13 +56,13 @@ def some():
 @login_required
 def add_new_words(request):
     if request.method == 'POST':
-        en = request.POST['en_word'].lower()
-        ua = request.POST['ua_word'].lower()
-        if en.isalpha() and ua.isalpha():
-            field = WordsForm(request.POST)
-            field.save()
-            data = {'en': en, 'ua': ua}
-            return redirect('base_app/word_added_successfully', {'data': data})  # always must be redirect
+        form = WordsForm(request.POST)
+        if form.is_valid():
+            en_word = form.cleaned_data['en_word'].capitalize()
+            ua_word = form.cleaned_data['ua_word'].capitalize()
+            c = Words(en_word=en_word, ua_word=ua_word)
+            c.save()
+            return redirect('base_app/word_added_successfully')  # always must be redirect
     else:
         form = WordsForm()
     return render(request, 'base_app/add_new_words.html', {'form': form})
