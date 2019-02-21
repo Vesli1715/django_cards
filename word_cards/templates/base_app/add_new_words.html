@@ -15,6 +15,11 @@
                         <div class="text-center">
                             <button type="submit" class="btn btn-success">Add word</button>
                         </div>
+                        <div class="text-center mt-3">
+                            {% if error_message %}
+                                <h4 style="color: red;"> Enter words only with letters, without numbers and other characters !</h4>
+                            {% endif %}
+                        </div>
                     </form>
                 </div>
             </div>

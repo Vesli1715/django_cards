@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fabbfb37-71cf-4457-b6d2-299a119c9d0e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration/templates/registration/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/registration/templates/registration/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/word_cards/static/word_cards/css/test.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/word_cards/templates/base_app/main_training_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/word_cards/templates/base_app/main_training_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/word_cards/templates/base_app/word_added_successfully.html" beforeDir="false" afterPath="$PROJECT_DIR$/word_cards/templates/base_app/word_added_successfully.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/word_cards/templates/base_app/add_new_words.html" beforeDir="false" afterPath="$PROJECT_DIR$/word_cards/templates/base_app/add_new_words.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/word_cards/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/word_cards/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,52 +12,44 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.57578063">
-      <split-first>
-        <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/word_cards/forms.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-                  <folding>
-                    <element signature="e#0#24#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/word_cards/views.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="70" column="12" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="12" />
-                  <folding>
-                    <element signature="e#0#26#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/word_cards/forms.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="16" selection-start-line="16" selection-end-line="16" />
-                  <folding>
-                    <element signature="e#0#24#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/word_cards/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/word_cards/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="70" column="111" selection-start-line="70" selection-start-column="98" selection-end-line="70" selection-end-column="111" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/word_cards/templates/base_app/add_new_words.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+              <folding>
+                <element signature="n#style#0;n#h4#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -125,7 +113,6 @@
         <option value="$PROJECT_DIR$/word_cards/templates/base_app/training.html" />
         <option value="$PROJECT_DIR$/word_cards/templates/base_app/main_traning_page.html" />
         <option value="$PROJECT_DIR$/registration/templates/registration/password_reset_form.html" />
-        <option value="$PROJECT_DIR$/word_cards/templates/base_app/add_new_words.html" />
         <option value="$PROJECT_DIR$/word_cards/urls.py" />
         <option value="$PROJECT_DIR$/registration/templates/registration/base.html" />
         <option value="$PROJECT_DIR$/word_cards/templates/base_app/table_of_words.html" />
@@ -135,6 +122,7 @@
         <option value="$PROJECT_DIR$/word_cards/templates/base_app/word_added_successfully.html" />
         <option value="$PROJECT_DIR$/word_cards/templates/base_app/main_training_page.html" />
         <option value="$PROJECT_DIR$/word_cards/views.py" />
+        <option value="$PROJECT_DIR$/word_cards/templates/base_app/add_new_words.html" />
       </list>
     </option>
   </component>
@@ -267,7 +255,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.02233805" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19285183" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.19706841" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -568,13 +556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/word_cards/templates/base_app/add_new_words.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/registration/templates/registration/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -689,10 +670,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/word_cards/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="70" column="12" selection-start-line="70" selection-start-column="12" selection-end-line="70" selection-end-column="12" />
+        <state relative-caret-position="315">
+          <caret line="70" column="111" selection-start-line="70" selection-start-column="98" selection-end-line="70" selection-end-column="111" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/word_cards/templates/base_app/add_new_words.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding>
+            <element signature="n#style#0;n#h4#0;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
