@@ -5,13 +5,15 @@ from .forms import WordsForm, DeleteForm
 from .models import Words
 
 
-def base(request):
-    return render(request, 'word_cards/content.html')
-
 """---------------- ADD WORDS, TABLE AND DELETING WORDS BLOCK--------------------------"""
+
 
 @login_required
 def add_new_words(request):
+    """Function get from the user data of new English and Ukrainian words,
+     and write them in db. Also doing some validation of this data, and
+     return error message when data is not valid"""
+
     if request.method == 'POST':
         form = WordsForm(request.POST)
         en = request.POST['en_word']
@@ -32,7 +34,7 @@ def add_new_words(request):
 
 
 def word_added_successfully(request):
-
+    """Function return success page, when forms in function add_new_words we get new data"""
     return render(request, 'base_app/word_added_successfully.html')
 
 
@@ -56,16 +58,15 @@ def table_of_words(request):
     return render(request, 'base_app/table_of_words.html', D)
 
 
-
-
-
 """ ---------- TRAINING BLOCK ------------- """
 
 def main_training_page(request):
+    """Call the main navigation page of training block"""
     return render(request, 'base_app/main_training_page.html')
 
 
 def flash_cards(request):
+    """Passes english words and translation into flashcard training page"""
     fields = Words.objects.all().order_by('-id')[:8]
     return render(request, 'base_app/flash_cards.html', {'fields': fields})
 
@@ -83,12 +84,10 @@ def list_last5_from_table():
 
 
 w_index = 0
-
-
 @login_required
 def training(request):
     """The function is designed to run the training_last_five.html page.
-    Using dictionaries (keys -> value) logic is the right choice"""
+    Used dictionaries (keys -> value) logic when it is compared whether the answer is correct"""
 
     all_words = {key: value for (key, value) in list_last5_from_table()}
     list_of_en_words = [en for en, ua in all_words.items()]
