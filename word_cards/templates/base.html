@@ -13,14 +13,8 @@
 	<body >
 		<div class="top">
 			<div class="menu">
-				<a href="{% url 'word_cards:add_words' %}">
-					<button type="submit" class="btn btn-success"> Додати слово </button>
-				</a>
-		
-				<a href="{% url 'word_cards:last_ten' %}">
-					<button type="submit" class="btn btn-success"> Список слів</button>
-				</a>
-			
+
+
 				<div class="dropdown show">
 	  				<a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 	    			Тренування
@@ -28,7 +22,7 @@
 
 	  				<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
 	    				<a class="dropdown-item" href="{% url 'word_cards:flip_cards' %}"> Флеш картки </a>
-	    				<a class="dropdown-item" href="{% url 'word_cards:choice' %}"> Choice </a>
+
 	    				<a class="dropdown-item" href="#"> Something else here </a>
 	  				</div>
 				</div>

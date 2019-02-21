@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
       {% load static %}
         <link rel="stylesheet" type="text/css" href="{% static 'base_app/css/test.css' %}">
+
       <title>{% block title %} English words {% endblock %}</title>
       <style type="text/css">
 
@@ -35,6 +36,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="nav-link" href="{% url 'word_cards:main_training_page' %}">Training main page</a>
+                        <a class="nav-link" href="{% url 'word_cards:flash_cards' %}">Flash cards</a>
                         <a class="nav-link" href="{% url 'word_cards:training' %}">Training last 5</a>
                     </div>
                 </li>
