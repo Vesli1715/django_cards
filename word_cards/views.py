@@ -5,6 +5,7 @@ from .forms import WordsForm, DeleteForm
 from .models import Words
 
 
+
 """---------------- ADD WORDS, TABLE AND DELETING WORDS BLOCK--------------------------"""
 
 
@@ -21,8 +22,10 @@ def add_new_words(request):
         if form.is_valid() and (en.isalpha() and ua.isalpha()):
             en_word = form.cleaned_data['en_word'].capitalize()
             ua_word = form.cleaned_data['ua_word'].capitalize()
-            c = Words(en_word=en_word, ua_word=ua_word)
-            c.save()
+            form = WordsForm(request.POST)          # form = Words(en_word=en_word, ua_word=ua_word)
+            instance = form.save(commit=False)
+            instance.author = request.user
+            instance.save()
             return redirect('base_app/word_added_successfully')  # always must be redirect
         else:
             form = WordsForm()
