@@ -95,10 +95,11 @@ def list_last5_from_table():
 
 
 w_index = 0
+
 @login_required
-def training(request):
+def training_english_word(request):
     """The function is designed to run the training_last_five.html page.
-    Used dictionaries (keys -> value) logic when it is compared whether the answer is correct"""
+    Used dictionaries (keys(eng_word) -> value(ukr_word)) logic when it is compared whether the answer is correct"""
 
     all_words = {key: value for (key, value) in list_last5_from_table()}
     list_of_en_words = [en for en, ua in all_words.items()]
@@ -127,10 +128,54 @@ def training(request):
     elif next:
         w_index += 1
         question_word = list_of_en_words[w_index]
-    print(list_of_en_words)
+
     data = {
         'result': result,
-        'list_of_ua_words': list_of_ua_words,
+        'list_of_words': list_of_ua_words,
         "question_word": question_word,
     }
-    return render(request, 'base_app/training.html', data)
+    return render(request, 'base_app/training_en.html', data)
+
+
+w_index = 0
+
+@login_required
+def training_ukrainian_word(request):
+    """The function is designed to run the training_last_five.html page.
+    Used dictionaries (keys(ukr_word) -> value(eng_word)) logic when it is compared whether the answer is correct"""
+
+    all_words = {value: key for (key, value) in list_last5_from_table()}
+    list_of_ua_words = [en for en, ua in all_words.items()]
+    list_of_en_words = [ua for en, ua in all_words.items()]
+    shuffle(list_of_en_words)
+
+    user_choice = ''
+    if request.method == 'POST':
+        d = dict(request.POST)
+        for k, v in d.items():
+            user_choice = v[0]   # return word selected by user from radio button form
+
+    global w_index
+    question_word = list_of_ua_words[w_index]
+    result = ''
+    next = False
+    if request.method == 'POST':
+        if all_words[question_word] == user_choice:
+            result = list_of_ua_words[w_index] + " --> " + user_choice
+            next = True
+        else:
+            result = "Wrong"
+
+    if w_index >= 4:
+        return render(request, 'base_app/main_training_page.html')
+    elif next:
+        w_index += 1
+        question_word = list_of_ua_words[w_index]
+
+    data = {
+        'result': result,
+        'list_of_words': list_of_en_words,
+        "question_word": question_word,
+    }
+    return render(request, 'base_app/training_ua.html', data)
+

@@ -4,9 +4,9 @@
 <h3>Main training page</h3>
 <h4>Select type of training:</h4>
 <ul>
-    <li>Flash cards</li>
-    <li>English word in Ukrainian</li>
-    <li>Ukraininan word in English</li>
+    <a class="nav-link" href="{% url 'base_app:flash_cards' %}">Flash cards</a>
+    <a class="nav-link" href="{% url 'base_app:training_english_word' %}">English last 5</a>
+    <a class="nav-link" href="{% url 'base_app:training_ukrainian_word' %}">Ukrainian last 5</a>
 </ul>
 
 {% endblock%}
