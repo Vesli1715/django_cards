@@ -22,7 +22,7 @@ def add_new_words(request):
         if form.is_valid() and (en.isalpha() and ua.isalpha()):
             en_word = form.cleaned_data['en_word'].capitalize()
             ua_word = form.cleaned_data['ua_word'].capitalize()
-            form = WordsForm(request.POST)          # form = Words(en_word=en_word, ua_word=ua_word)
+            form = WordsForm({'en_word': en_word, 'ua_word': ua_word}) #form = WordsForm(request.POST)
             instance = form.save(commit=False)
             instance.author = request.user
             instance.save()
