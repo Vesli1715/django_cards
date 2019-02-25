@@ -6,7 +6,7 @@
 		<h1> Translate this word: {{ question_word }}</h1>
 		<form action="" method="post">
 			{% csrf_token %}
-			{% for word in list_of_ua_words %}
+			{% for word in list_of_words %}
 			<ul class="nav nav-tabs">
 	       		<li class="nav-item" >
 	          		<input type="radio" name="process" value="{{ word }}" id="{{ word }}"/>
