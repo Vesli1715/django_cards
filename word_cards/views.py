@@ -41,11 +41,19 @@ def word_added_successfully(request):
     return render(request, 'base_app/word_added_successfully.html')
 
 
+def logged_in_user_id(request):
+    """"Function used in table_of_words()"""
+    user_id = None
+    if request.user.is_authenticated:
+        user_id = request.user.id
+    return user_id
+
+
 def table_of_words(request):
-    """function return data from model in table
+    """Function return data from model in table
     and works with DeleteForm for delete record from table"""
 
-    fields = Words.objects.all().order_by('-id')
+    fields = Words.objects.filter(author_id=logged_in_user_id(request)).order_by('-id')
     if request.method == 'POST':
         form = DeleteForm(request.POST)
         if form.is_valid():
