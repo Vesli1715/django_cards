@@ -26,7 +26,7 @@ with open('../secret_key.txt') as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'vasyl1993.pythonanywhere.com'] # must be if debug=false. else use-> ALLOWED_HOSTS = [}
+ALLOWED_HOSTS = ['127.0.0.1', 'vasyl1993.pythonanywhere.com']# ALLOWED_HOSTS = [}
 
 # Application definition
 
@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-with open('../db_password.txt') as f: # hide db password
+with open('../db_password.txt') as f:
     db_password = f.read().strip()
 
 DATABASES = {
@@ -134,13 +134,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 LOGIN_REDIRECT_URL = "index"
 LOGOUT_REDIRECT_URL = "index"
 
-#EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # for confirm password change in terminal
+#EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # for confirm password change
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'bethebest1715@gmail.com'
 EMAIL_HOST_PASSWORD = 'vasyl1715'
 EMAIL_PORT = 587
-
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
