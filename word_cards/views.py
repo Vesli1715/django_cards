@@ -26,7 +26,7 @@ def add_new_words(request):
             instance = form.save(commit=False)
             instance.author = request.user
             instance.save()
-            return redirect('base_app/word_added_successfully')  # always must be redirect
+            return redirect('base_app:word_added_successfully')  # always must be redirect
         else:
             form = WordsForm()
             error_message = True
@@ -124,7 +124,8 @@ def training_english_word(request):
             result = "Wrong"
 
     if w_index >= 4:
-        return render(request, 'base_app/main_training_page.html')
+        w_index = 0
+        return redirect('base_app:main_training_page')
     elif next:
         w_index += 1
         question_word = list_of_en_words[w_index]
@@ -167,7 +168,8 @@ def training_ukrainian_word(request):
             result = "Wrong"
 
     if w_index >= 4:
-        return render(request, 'base_app/main_training_page.html')
+        w_index = 0
+        return redirect('base_app:main_training_page')
     elif next:
         w_index += 1
         question_word = list_of_ua_words[w_index]
