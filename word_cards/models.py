@@ -3,8 +3,8 @@ from django.contrib.auth.models import User
 
 
 class Words(models.Model):
-    en_word = models.CharField(max_length=16)
-    ua_word = models.CharField(max_length=16)
+    en_word = models.CharField(max_length=30)
+    ua_word = models.CharField(max_length=30)
     added_data = models.DateField(auto_now_add=True, blank=True)
     author = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
 

@@ -12,7 +12,7 @@ class WordsForm(forms.ModelForm):
         }
 
 class DeleteForm(forms.Form):
-    delete_word = forms.CharField(label='Enter any word you want to delete', max_length=16)
+    delete_word = forms.CharField(label='Enter any word you want to delete', max_length=30)
 
 
 
