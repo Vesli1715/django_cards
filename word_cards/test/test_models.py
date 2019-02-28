@@ -9,7 +9,7 @@ class WordsModelTestClass(TestCase):
     def setUpTestData(cls):
         """"Run once to set up non-modified data for all class methods.
         Set up non-modified objects used by all test methods"""
-        user = User.objects.create()                                         #username='Yarik'
+        user = User.objects.create()
         Words.objects.create(en_word="Python", ua_word="Пітон", author=user)
 
     def setUp(self):
