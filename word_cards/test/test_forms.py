@@ -1,5 +1,4 @@
 from django.test import TestCase
-from django.test import Client
 from word_cards.forms import WordsForm, DeleteForm
 from registration.forms import SignupForm
 
@@ -15,7 +14,11 @@ class Setup_Class(TestCase):
 
 
 class WordsForm_Test(TestCase):
-    pass
+
+    def test_validation_added_words(self):
+        form = WordsForm({'en_word': 'english', 'ua_word': 'ukrainian'})
+        self.assertTrue(form.is_valid())
+
 
 
 class Word_DeleteForm_Test(TestCase):
@@ -23,14 +26,6 @@ class Word_DeleteForm_Test(TestCase):
     def test_validation_deleting_word(self):
         form = DeleteForm({'delete_word': "word"})
         self.assertTrue(form.is_valid())
-
-    def test_max_length_of_delete_word(self):
-        max_length = DeleteForm._meta.get_field('delete_word').max_length
-        self.assertEquals(max_length, 30)
-
-
-
-
 
 
 class User_SignupForm_Test(TestCase):
@@ -40,17 +35,15 @@ class User_SignupForm_Test(TestCase):
                                 'email': "box@gmail.com",
                                 'password1': "yarik123456789",
                                 'password2': "yarik123456789"})
-
         self.assertTrue(form.is_valid())
         record = form.save()
         self.assertEqual(record.username, "John")
         self.assertEqual(record.email, "box@gmail.com")
-        self.assertEqual(record.password1, "yarik123456789")
-        self.assertEqual(record.password2, "yarik123456789")
 
     def test_UserForm_invalid(self):
         form = SignupForm(data={'username': '',
                                 'email': "false",
                                 'password1': "false",
                                 'password2': 'password'})
+
         self.assertFalse(form.is_valid())
