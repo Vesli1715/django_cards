@@ -57,4 +57,4 @@ class WordsModelTestClass(TestCase):
     def test_ua_word_max_length(self):
         words = Words.objects.get(id=1)
         max_length = words._meta.get_field('ua_word').max_length
-        self.assertEquals(max_length, 30)
+        self.assertEquals(max_length, 16)

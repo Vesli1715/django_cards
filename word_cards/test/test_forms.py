@@ -16,9 +16,12 @@ class Setup_Class(TestCase):
 class WordsForm_Test(TestCase):
 
     def test_validation_added_words(self):
-        form = WordsForm({'en_word': 'english', 'ua_word': 'ukrainian'})
-        self.assertTrue(form.is_valid())
+        forms = WordsForm({'en_word': 'english', 'ua_word': 'ukrainian'})
+        self.assertTrue(forms.is_valid())
 
+        record = forms.save(commit=False)
+        self.assertEqual(record.en_word, 'english')
+        self.assertEqual(record.ua_word, 'ukrainian')
 
 
 class Word_DeleteForm_Test(TestCase):
@@ -39,6 +42,7 @@ class User_SignupForm_Test(TestCase):
         record = form.save()
         self.assertEqual(record.username, "John")
         self.assertEqual(record.email, "box@gmail.com")
+
 
     def test_UserForm_invalid(self):
         form = SignupForm(data={'username': '',
