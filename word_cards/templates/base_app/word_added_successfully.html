@@ -7,6 +7,11 @@
         <h1>Words added successfully</h1>
     </div>
     <div class="row justify-content-center">
+        {%  if error_not_enough_words %}
+            <h4 style="color: red;">*Для початку вивчення додайте перших <strong>пять</strong> слів</h4>
+        {% endif %}
+    </div>
+    <div class="row justify-content-center">
         <div class="col-10">
             <div class="card-body text-center">
                 <a href="{% url 'base_app:add_new_words' %}">
