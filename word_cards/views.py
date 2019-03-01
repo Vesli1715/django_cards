@@ -56,7 +56,7 @@ def logged_in_user_id(request):
 
 
 def table_of_words(request):
-    """Function return data from model in table
+    """Function return data from model into table
     and works with DeleteForm for deleting record from table"""
 
     fields = Words.objects.filter(author_id=logged_in_user_id(request)).order_by('-id')
@@ -103,7 +103,7 @@ def list_last5_from_table(request):
 en_word_index = 0  # variable for counting right answers
 @login_required
 def training_english_word(request):
-    """The function is designed to run the training_last_five.html page.
+    """The function is designed to run the training_ua.html page.
     Used dictionaries (keys(eng_word) -> value(ukr_word)) logic when it is compared whether the answer is correct"""
 
     all_words = {key: value for (key, value) in list_last5_from_table(request)}
@@ -147,7 +147,7 @@ ua_word_index = 0 # variable for counting right answers
 
 @login_required
 def training_ukrainian_word(request):
-    """The function is designed to run the training_last_five.html page.
+    """The function is designed to run the training_ua.html page.
     Used dictionaries (keys(ukr_word) -> value(eng_word)) logic when it is compared whether the answer is correct"""
 
     all_words = {value: key for (key, value) in list_last5_from_table(request)}
