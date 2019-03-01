@@ -20,5 +20,4 @@ urlpatterns = [
     path('', include('registration.urls')),
 	path('study_words/', include('study_words_app.urls')),
     path('admin/', admin.site.urls),
-
 ]
