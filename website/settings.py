@@ -32,14 +32,15 @@ ALLOWED_HOSTS = ['127.0.0.1', 'vasyl1993.pythonanywhere.com']# ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'registration',
-    'word_cards',
+    'study_words_app',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crispy_forms',
+
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4' # redefine the behavior of forms
