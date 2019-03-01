@@ -8,13 +8,11 @@ from .models import Words
 
 """---------------- ADD WORDS, TABLE AND DELETING WORDS BLOCK--------------------------"""
 
-
 @login_required
 def add_new_words(request):
     """Function get from the user data of new English and Ukrainian words,
      and write them in db. Also doing some validation of this data, and
      return error message when data is not valid"""
-
     if request.method == 'POST':
         form = WordsForm(request.POST)
         en = request.POST['en_word']
@@ -37,12 +35,20 @@ def add_new_words(request):
 
 
 def word_added_successfully(request):
-    """Function return success page, when forms in function add_new_words we get new data"""
-    return render(request, 'base_app/word_added_successfully.html')
+    """Function return success page, when forms in function add_new_words we get new data
+    and error message when count of words less than 5 """
+
+    words_list = list(Words.objects.filter(author_id=logged_in_user_id(request)).order_by('-id')[:10])
+    error_not_enough_words = True
+    if len(words_list) > 4:
+        error_not_enough_words = False
+    return render(request, 'base_app/word_added_successfully.html', {'error_not_enough_words': error_not_enough_words})
 
 
 def logged_in_user_id(request):
-    """"Function used in table_of_words()"""
+    """"Function used in table_of_words()
+    checks whether the user is authenticated and if so, returns his id"""
+
     user_id = None
     if request.user.is_authenticated:
         user_id = request.user.id
@@ -78,30 +84,26 @@ def main_training_page(request):
 
 def flash_cards(request):
     """Passes english words and translation into flashcard training page"""
-    fields = Words.objects.all().order_by('-id')[:8]
+    fields = Words.objects.filter(author_id=logged_in_user_id(request)).order_by('-id')[:8]
     return render(request, 'base_app/flash_cards.html', {'fields': fields})
 
 
-def list_last5_from_table():
+
+def list_last5_from_table(request):
     """returns list of last 5 records in db in format [['en_w','ua_word'],[...]]
     this function for using in training func"""
-    query = list(Words.objects.all().order_by('-id')[:5])
-    L = []
-    for items in query:
-        s = str(items)
-        words = s.split(' ')
-        L.append(words)
+    query = list(Words.objects.filter(author_id=logged_in_user_id(request)).order_by('-id')[:5])
+    L = [str(items).split(' ') for items in query ]
     return L
 
 
 w_index = 0
-
 @login_required
 def training_english_word(request):
     """The function is designed to run the training_last_five.html page.
     Used dictionaries (keys(eng_word) -> value(ukr_word)) logic when it is compared whether the answer is correct"""
 
-    all_words = {key: value for (key, value) in list_last5_from_table()}
+    all_words = {key: value for (key, value) in list_last5_from_table(request)}
     list_of_en_words = [en for en, ua in all_words.items()]
     list_of_ua_words = [ua for en, ua in all_words.items()]
     shuffle(list_of_ua_words)
@@ -145,7 +147,7 @@ def training_ukrainian_word(request):
     """The function is designed to run the training_last_five.html page.
     Used dictionaries (keys(ukr_word) -> value(eng_word)) logic when it is compared whether the answer is correct"""
 
-    all_words = {value: key for (key, value) in list_last5_from_table()}
+    all_words = {value: key for (key, value) in list_last5_from_table(request)}
     list_of_ua_words = [en for en, ua in all_words.items()]
     list_of_en_words = [ua for en, ua in all_words.items()]
     shuffle(list_of_en_words)
