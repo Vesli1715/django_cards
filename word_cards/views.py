@@ -5,8 +5,8 @@ from .forms import WordsForm, DeleteForm
 from .models import Words
 
 
-
 """---------------- ADD WORDS, TABLE AND DELETING WORDS BLOCK--------------------------"""
+
 
 @login_required
 def add_new_words(request):
@@ -57,7 +57,7 @@ def logged_in_user_id(request):
 
 def table_of_words(request):
     """Function return data from model in table
-    and works with DeleteForm for delete record from table"""
+    and works with DeleteForm for deleting record from table"""
 
     fields = Words.objects.filter(author_id=logged_in_user_id(request)).order_by('-id')
     if request.method == 'POST':
@@ -67,15 +67,16 @@ def table_of_words(request):
             if word:
                 Words.objects.filter(en_word=word).delete()
                 Words.objects.filter(ua_word=word).delete()
-            D = {'form': form, 'fields': fields}
-            return render(request, 'base_app/table_of_words.html', D)
+            data = {'form': form, 'fields': fields}
+            return render(request, 'base_app/table_of_words.html', data)
     else:
         form = DeleteForm()
-    D = {'form': form, 'fields': fields}
-    return render(request, 'base_app/table_of_words.html', D)
+    data = {'form': form, 'fields': fields}
+    return render(request, 'base_app/table_of_words.html', data)
 
 
 """ ---------- TRAINING BLOCK ------------- """
+
 
 def main_training_page(request):
     """Call the main navigation page of training block"""
@@ -84,20 +85,22 @@ def main_training_page(request):
 
 def flash_cards(request):
     """Passes english words and translation into flashcard training page"""
+
     fields = Words.objects.filter(author_id=logged_in_user_id(request)).order_by('-id')[:8]
     return render(request, 'base_app/flash_cards.html', {'fields': fields})
 
 
 
 def list_last5_from_table(request):
-    """returns list of last 5 records in db in format [['en_w','ua_word'],[...]]
+    """Returns list of last 5 records in db in format [['en_w','ua_word'],[...]]
     this function for using in training func"""
+
     query = list(Words.objects.filter(author_id=logged_in_user_id(request)).order_by('-id')[:5])
     L = [str(items).split(' ') for items in query ]
     return L
 
 
-w_index = 0
+en_word_index = 0  # variable for counting right answers
 @login_required
 def training_english_word(request):
     """The function is designed to run the training_last_five.html page.
@@ -114,23 +117,23 @@ def training_english_word(request):
         for k, v in d.items():
             user_choice = v[0]   # return word selected by user from radio button form
 
-    global w_index
-    question_word = list_of_en_words[w_index]
+    global en_word_index
+    question_word = list_of_en_words[en_word_index]
     result = ''
     next = False
     if request.method == 'POST':
         if all_words[question_word] == user_choice:
-            result = list_of_en_words[w_index] + " --> " + user_choice
+            result = list_of_en_words[en_word_index] + " --> " + user_choice
             next = True
         else:
             result = "Wrong"
 
-    if w_index >= 4:
-        w_index = 0
+    if en_word_index >= 4:
+        en_word_index = 0
         return redirect('base_app:main_training_page')
     elif next:
-        w_index += 1
-        question_word = list_of_en_words[w_index]
+        en_word_index += 1
+        question_word = list_of_en_words[en_word_index]
 
     data = {
         'result': result,
@@ -140,7 +143,7 @@ def training_english_word(request):
     return render(request, 'base_app/training_en.html', data)
 
 
-w_index = 0
+ua_word_index = 0 # variable for counting right answers
 
 @login_required
 def training_ukrainian_word(request):
@@ -158,23 +161,23 @@ def training_ukrainian_word(request):
         for k, v in d.items():
             user_choice = v[0]   # return word selected by user from radio button form
 
-    global w_index
-    question_word = list_of_ua_words[w_index]
+    global ua_word_index
+    question_word = list_of_ua_words[ua_word_index]
     result = ''
     next = False
     if request.method == 'POST':
         if all_words[question_word] == user_choice:
-            result = list_of_ua_words[w_index] + " --> " + user_choice
+            result = list_of_ua_words[ua_word_index] + " --> " + user_choice
             next = True
         else:
             result = "Wrong"
 
-    if w_index >= 4:
-        w_index = 0
+    if ua_word_index >= 4:
+        ua_word_index = 0
         return redirect('base_app:main_training_page')
     elif next:
-        w_index += 1
-        question_word = list_of_ua_words[w_index]
+        ua_word_index += 1
+        question_word = list_of_ua_words[ua_word_index]
 
     data = {
         'result': result,
