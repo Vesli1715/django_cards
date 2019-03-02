@@ -1,11 +1,10 @@
+"""ADD WORDS, TABLE AND DELETING WORDS BLOCK"""
+
 from random import shuffle
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import WordsForm, DeleteForm
 from .models import Words
-
-
-"""---------------- ADD WORDS, TABLE AND DELETING WORDS BLOCK--------------------------"""
 
 
 @login_required
@@ -96,8 +95,7 @@ def list_last5_from_table(request):
     this function for using in training func"""
 
     query = list(Words.objects.filter(author_id=logged_in_user_id(request)).order_by('-id')[:5])
-    L = [str(items).split(' ') for items in query ]
-    return L
+    return [str(items).split(' ') for items in query ]
 
 
 en_word_index = 0  # variable for counting right answers
