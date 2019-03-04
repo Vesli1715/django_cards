@@ -2,12 +2,6 @@
     font-family: 'Spectral', sans-serif !important;
 }
 
-.test {
-	background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('../images/background.jpg');
-	background-position: center;
-	background-size: cover;
-}
-
 .asteriskField {
     display: none;
 }
@@ -32,9 +26,6 @@ form .alert ul {
     -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
-
--------------------------flash cards block ---------------------
-.pass{}
 
 .content {
 	display: flex;
@@ -67,10 +58,6 @@ form .alert ul {
 	transition: all 0.5s ease;
 }
 
-/*.thecard:hover{
-	transform: rotateY(180deg);
-}
-*/
 .thecard:active {
 	transform: rotateY(180deg);
 }
@@ -117,4 +104,4 @@ form .alert ul {
 	background: rgb(255,255,255, 0.6);
 }
 
-------------------end flash card block -----------------
+
