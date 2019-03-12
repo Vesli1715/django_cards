@@ -85,7 +85,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # changing
         'NAME': 'django_db',  # os.path.join(BASE_DIR, 'django_db'),
-        'USER': 'vasyl',
+        'USER': 'root',
         'PASSWORD': db_password,
     }
 
