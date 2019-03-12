@@ -11,4 +11,5 @@ class Test_AddWords_And_Table(TestCase):
         c = Client()
         response = c.post('/words/table_of_words/', {'en_word': 'john', 'ua_word': 'smithss'})
         self.assertEqual(response.status_code, 200)
+    #asd
 
